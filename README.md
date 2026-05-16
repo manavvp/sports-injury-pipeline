@@ -4,7 +4,7 @@ An end-to-end data engineering pipeline on AWS to analyse if: ** athletes return
 
 The pipeline ingests, models, and serves injury and performance data across two sports — NFL and association football (via Transfermarkt) — using a constellation schema that enables cross-sport analysis through conformed dimensions.
 
-Built as a portfolio project out of curiosity to understand on how impactful major injuries on players' careers.
+Built as a portfolio project out of curiosity to understand on how impactful major injuries are on players' careers.
 
 ---
 

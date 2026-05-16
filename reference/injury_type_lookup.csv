@@ -1,0 +1,433 @@
+sport,raw_injury_text,body_region,injury_category,severity,is_sports_injury
+nfl,Toe,Foot,Unspecified,Unspecified,true
+nfl,ankle,Ankle,Unspecified,Unspecified,true
+nfl,back,Back,Unspecified,Unspecified,true
+nfl,toe,Foot,Unspecified,Unspecified,true
+nfl,Abdomen,Abdomen,Unspecified,Unspecified,true
+nfl,Achilles,Ankle,Tendon,Unspecified,true
+nfl,Ankle,Ankle,Unspecified,Unspecified,true
+nfl,Appendicitis,Abdomen,Organ,Unspecified,false
+nfl,Appendix,Abdomen,Organ,Unspecified,false
+nfl,Back,Back,Unspecified,Unspecified,true
+nfl,Biceps,Arm,Muscle,Unspecified,true
+nfl,Calf,Calf,Muscle,Unspecified,true
+nfl,Chest,Chest,Unspecified,Unspecified,true
+nfl,Coach's decision,,,, false
+nfl,Coaching,,,, false
+nfl,Collarbone,Shoulder,Bone,Unspecified,true
+nfl,Concussion,Head,Concussion,Unspecified,true
+nfl,Elbow,Elbow,Unspecified,Unspecified,true
+nfl,Eye,Head,Unspecified,Unspecified,true
+nfl,Face,Head,Unspecified,Unspecified,true
+nfl,Fibula,Lower Leg,Bone,Unspecified,true
+nfl,Finger,Hand,Unspecified,Unspecified,true
+nfl,Foot,Foot,Unspecified,Unspecified,true
+nfl,Foot/Wrist/Hip,Multiple,Unspecified,Unspecified,true
+nfl,Forearm,Arm,Unspecified,Unspecified,true
+nfl,Glute,Hip,Muscle,Unspecified,true
+nfl,Groin,Groin,Unspecified,Unspecified,true
+nfl,Hamstring,Hamstring,Muscle,Unspecified,true
+nfl,Hand,Hand,Unspecified,Unspecified,true
+nfl,Heel,Foot,Unspecified,Unspecified,true
+nfl,Hernia,Abdomen,Unspecified,Unspecified,true
+nfl,Hip,Hip,Unspecified,Unspecified,true
+nfl,Illness,,,,false
+nfl,Inactive,,,,false
+nfl,Jaw,Head,Bone,Unspecified,true
+nfl,Knee,Knee,Unspecified,Unspecified,true
+nfl,Neck,Neck,Unspecified,Unspecified,true
+nfl,Not injury related - did not travel,,,,false
+nfl,Not injury related - other,,,,false
+nfl,Not injury related - personal matter,,,,false
+nfl,Not injury related - resting player,,,,false
+nfl,Oblique,Abdomen,Muscle,Unspecified,true
+nfl,"Oblique ",Abdomen,Muscle,Unspecified,true
+nfl,Pectoral,Chest,Muscle,Unspecified,true
+nfl,Pelvis,Hip,Bone,Unspecified,true
+nfl,Quadricep,Thigh,Muscle,Unspecified,true
+nfl,Returning from Suspension,,,,false
+nfl,Rib,Chest,Bone,Unspecified,true
+nfl,Ribs,Chest,Bone,Unspecified,true
+nfl,Shin,Lower Leg,Unspecified,Unspecified,true
+nfl,Shoulder,Shoulder,Unspecified,Unspecified,true
+nfl,Stinger,Neck,Nerve,Unspecified,true
+nfl,Thigh,Thigh,Unspecified,Unspecified,true
+nfl,Throat,Neck,Unspecified,Unspecified,true
+nfl,Thumb,Hand,Unspecified,Unspecified,true
+nfl,Tooth,Head,Bone,Unspecified,true
+nfl,Triceps,Arm,Muscle,Unspecified,true
+nfl,Wrist,Wrist,Unspecified,Unspecified,true
+nfl,appendix,Abdomen,Organ,Unspecified,false
+nfl,kidney,Abdomen,Organ,Unspecified,true
+nfl,left Ankle,Ankle,Unspecified,Unspecified,true
+nfl,left Hamstring,Hamstring,Muscle,Unspecified,true
+nfl,left Knee,Knee,Unspecified,Unspecified,true
+nfl,left Quadricep,Thigh,Muscle,Unspecified,true
+nfl,left Shoulder,Shoulder,Unspecified,Unspecified,true
+nfl,not injury related - returning from suspension,,,,false
+nfl,not injury related - team decision,,,,false
+nfl,not injury related - travel,,,,false
+nfl,right Ankle,Ankle,Unspecified,Unspecified,true
+nfl,right Calf,Calf,Muscle,Unspecified,true
+nfl,right Elbow,Elbow,Unspecified,Unspecified,true
+nfl,right Finger,Hand,Unspecified,Unspecified,true
+nfl,right Groin,Groin,Unspecified,Unspecified,true
+nfl,right Hamstring,Hamstring,Muscle,Unspecified,true
+nfl,right Hip,Hip,Unspecified,Unspecified,true
+nfl,right Knee,Knee,Unspecified,Unspecified,true
+nfl,right Quadricep,Thigh,Muscle,Unspecified,true
+nfl,right Shoulder,Shoulder,Unspecified,Unspecified,true
+nfl,right Thumb,Hand,Unspecified,Unspecified,true
+nfl,right Wrist,Wrist,Unspecified,Unspecified,true
+football,Achilles tendon contusion,Ankle,Tendon,Bruise,true
+football,Achilles tendon irritation,Ankle,Tendon,Irritation,true
+football,Achilles tendon problems,Ankle,Tendon,Unspecified,true
+football,Achilles tendon rupture,Ankle,Tendon,Rupture,true
+football,Achilles tendon surgery,Ankle,Tendon,Surgery,true
+football,Achilles heel problems,Ankle,Tendon,Unspecified,true
+football,Acromioclavicular joint dislocation,Shoulder,Joint,Dislocation,true
+football,Adductor injury,Groin,Muscle,Unspecified,true
+football,Adductor pain,Groin,Muscle,Unspecified,true
+football,Adductor tear,Groin,Muscle,Tear,true
+football,Ankle injury,Ankle,Unspecified,Unspecified,true
+football,Ankle ligament tear,Ankle,Ligament,Tear,true
+football,Ankle problems,Ankle,Unspecified,Unspecified,true
+football,Ankle sprain,Ankle,Ligament,Sprain,true
+football,ankle sprain,Ankle,Ligament,Sprain,true
+football,Ankle surgery,Ankle,Unspecified,Surgery,true
+football,Appendectomy,Abdomen,Organ,Surgery,false
+football,Appendicitis,Abdomen,Organ,Unspecified,false
+football,Arch problems,Foot,Unspecified,Unspecified,true
+football,Arm injury,Arm,Unspecified,Unspecified,true
+football,Arthroscopy,Multiple,Joint,Surgery,true
+football,Auditory trauma,Head,Unspecified,Unspecified,true
+football,Back injury,Back,Unspecified,Unspecified,true
+football,Back problems,Back,Unspecified,Unspecified,true
+football,Balance disorder,Head,Unspecified,Unspecified,false
+football,Blockage in the back,Back,Unspecified,Unspecified,true
+football,Blood clots in the lungs,Chest,Organ,Unspecified,false
+football,Blood poisoning,,,,false
+football,Bone bleeding in the thigh,Thigh,Bone,Bruise,true
+football,Bone bruise,Multiple,Bone,Bruise,true
+football,Bone edema,Multiple,Bone,Swelling,true
+football,Bone inflammation,Multiple,Bone,Inflammation,true
+football,Bone marrow swelling,Multiple,Bone,Swelling,true
+football,Bone splintering,Multiple,Bone,Fracture,true
+football,Bone sprain,Multiple,Bone,Sprain,true
+football,Bone-Bruise-Syndrome,Multiple,Bone,Bruise,true
+football,Broken ankle,Ankle,Bone,Fracture,true
+football,Broken arm,Arm,Bone,Fracture,true
+football,Broken cheekbone,Head,Bone,Fracture,true
+football,Broken collarbone,Shoulder,Bone,Fracture,true
+football,Broken fibula,Lower Leg,Bone,Fracture,true
+football,Broken finger,Hand,Bone,Fracture,true
+football,Broken foot,Foot,Bone,Fracture,true
+football,Broken hand,Hand,Bone,Fracture,true
+football,Broken jaw,Head,Bone,Fracture,true
+football,Broken kneecap,Knee,Bone,Fracture,true
+football,Broken leg,Lower Leg,Bone,Fracture,true
+football,Broken nose bone,Head,Bone,Fracture,true
+football,Broken petrous bone in the ear,Head,Bone,Fracture,true
+football,Broken shoulder,Shoulder,Bone,Fracture,true
+football,Broken thumb,Hand,Bone,Fracture,true
+football,Broken tibia,Lower Leg,Bone,Fracture,true
+football,Broken toe,Foot,Bone,Fracture,true
+football,Bruise on ankle,Ankle,Unspecified,Bruise,true
+football,Bruise on shinbone,Lower Leg,Bone,Bruise,true
+football,Bruise on the ankle joint,Ankle,Joint,Bruise,true
+football,Bruised back,Back,Unspecified,Bruise,true
+football,Bruised knee,Knee,Unspecified,Bruise,true
+football,Bruised ribs,Chest,Bone,Bruise,true
+football,Bursitis,Multiple,Joint,Inflammation,true
+football,Calf injury,Calf,Muscle,Unspecified,true
+football,Calf muscle tear,Calf,Muscle,Tear,true
+football,Calf problems,Calf,Muscle,Unspecified,true
+football,Calf stiffness,Calf,Muscle,Stiffness,true
+football,Calf strain,Calf,Muscle,Strain,true
+football,Cancer,,,,false
+football,Capsular injury,Multiple,Joint,Unspecified,true
+football,Capsular tear of ankle joint,Ankle,Joint,Tear,true
+football,Capsule rupture,Multiple,Joint,Rupture,true
+football,Cartilage damage,Multiple,Cartilage,Damage,true
+football,Cerebral hemorrhage,Head,Unspecified,Unspecified,false
+football,Cervical spine injury,Neck,Bone,Unspecified,true
+football,Cervical vertebra fracture,Neck,Bone,Fracture,true
+football,Cheekbone bruise,Head,Bone,Bruise,true
+football,Cheekbone surgery,Head,Bone,Surgery,true
+football,Chest injury,Chest,Unspecified,Unspecified,true
+football,Coccyx bruise,Back,Bone,Bruise,true
+football,Collateral ankle ligament tear,Ankle,Ligament,Tear,true
+football,Collateral ligament injury,Knee,Ligament,Unspecified,true
+football,Collateral ligament ripture,Knee,Ligament,Rupture,true
+football,Collateral ligament tear,Knee,Ligament,Tear,true
+football,Compartment syndrome,Lower Leg,Muscle,Unspecified,true
+football,Compression of the spine,Back,Bone,Unspecified,true
+football,Contracture,Multiple,Muscle,Stiffness,true
+football,Corona virus,,,,false
+football,Crack bruise,Multiple,Bone,Bruise,true
+football,Cracked bone,Multiple,Bone,Fracture,true
+football,Cruciate ligament injury,Knee,Ligament,Unspecified,true
+football,Cruciate ligament strain,Knee,Ligament,Strain,true
+football,Cruciate ligament surgery,Knee,Ligament,Surgery,true
+football,Cruciate ligament tear,Knee,Ligament,Tear,true
+football,Cut,Multiple,Skin,Cut,true
+football,Cyst in the heel,Foot,Unspecified,Unspecified,true
+football,Cyst in the knee,Knee,Unspecified,Unspecified,true
+football,Cyst in the lungs,,,,false
+football,Cyst on jaw,Head,Unspecified,Unspecified,false
+football,Dead leg,Thigh,Muscle,Bruise,true
+football,Dental surgery,Head,Bone,Surgery,false
+football,Dislocation fracture of the ankle joint,Ankle,Joint,Fracture,true
+football,Dislocation of the kneecap,Knee,Bone,Dislocation,true
+football,Edema in the knee,Knee,Unspecified,Swelling,true
+football,Elbow fracture,Elbow,Bone,Fracture,true
+football,Elbow injury,Elbow,Unspecified,Unspecified,true
+football,Eye injury,Head,Unspecified,Unspecified,true
+football,Eyebow fracture,Head,Bone,Fracture,true
+football,Facial fracture,Head,Bone,Fracture,true
+football,Facial injury,Head,Unspecified,Unspecified,true
+football,Femoral fracture,Thigh,Bone,Fracture,true
+football,Femoral neck fracture,Hip,Bone,Fracture,true
+football,Fever,,,,false
+football,Finger injury,Hand,Unspecified,Unspecified,true
+football,Fissure of the fibula,Lower Leg,Bone,Fracture,true
+football,Fitness,,,,false
+football,Food poisoning,,,,false
+football,Foot bruise,Foot,Unspecified,Bruise,true
+football,Foot injury,Foot,Unspecified,Unspecified,true
+football,Foot surgery,Foot,Unspecified,Surgery,true
+football,Forearm fracture,Arm,Bone,Fracture,true
+football,Fracture of frontal bone,Head,Bone,Fracture,true
+football,Fracture of the eye socket,Head,Bone,Fracture,true
+football,Fracture of the humeral head,Shoulder,Bone,Fracture,true
+football,Fracture of fibula shaft,Lower Leg,Bone,Fracture,true
+football,Frontal sinus fracture,Head,Bone,Fracture,true
+football,Gehörgangsfraktur,Head,Bone,Fracture,true
+football,Groin injury,Groin,Unspecified,Unspecified,true
+football,Groin problems,Groin,Unspecified,Unspecified,true
+football,Groin strain,Groin,Muscle,Strain,true
+football,Groin surgery,Groin,Unspecified,Surgery,true
+football,Gunshot wound,,,,false
+football,Hairline crack in foot,Foot,Bone,Fracture,true
+football,Hairline crack in middle finger,Hand,Bone,Fracture,true
+football,Hairline crack in the lumbar region,Back,Bone,Fracture,true
+football,Hairline fracture in the fibula,Lower Leg,Bone,Fracture,true
+football,Hairline fracture in the muscles,Multiple,Bone,Fracture,true
+football,Hamstring injury,Hamstring,Muscle,Unspecified,true
+football,Hamstring muscle injury,Hamstring,Muscle,Unspecified,true
+football,Hamstring strain,Hamstring,Muscle,Strain,true
+football,Hand injury,Hand,Unspecified,Unspecified,true
+football,Head injury,Head,Unspecified,Unspecified,true
+football,Hearing damage,Head,Unspecified,Unspecified,false
+football,Heel injury,Foot,Unspecified,Unspecified,true
+football,Heel problems,Foot,Unspecified,Unspecified,true
+football,Heel spur,Foot,Bone,Unspecified,true
+football,Herniated disc,Back,Bone,Unspecified,true
+football,Herniated umbilical button,Abdomen,Unspecified,Unspecified,false
+football,Hip bruise,Hip,Unspecified,Bruise,true
+football,Hip flexor problems,Hip,Muscle,Unspecified,true
+football,Hip injury,Hip,Unspecified,Unspecified,true
+football,Hip problems,Hip,Unspecified,Unspecified,true
+football,Hole in the eardrum,Head,Unspecified,Unspecified,false
+football,Ill,,,,false
+football,Impingement syndrome,Shoulder,Joint,Unspecified,true
+football,Inflammation in the ankle joint,Ankle,Joint,Inflammation,true
+football,Inflammation in the head of the fibula,Lower Leg,Bone,Inflammation,true
+football,Inflammation in the knee,Knee,Unspecified,Inflammation,true
+football,Inflammation in the spine,Back,Bone,Inflammation,true
+football,Inflammation of ligaments in the knee,Knee,Ligament,Inflammation,true
+football,Inflammation of pubic bone,Hip,Bone,Inflammation,true
+football,Inflammation of the biceps tendon in the thigh,Thigh,Tendon,Inflammation,true
+football,Inflammation of the leg skin,Lower Leg,Skin,Inflammation,false
+football,Inflammation of the nerve roots in the back,Back,Nerve,Inflammation,true
+football,Inflammation of the pancreas,,,,false
+football,Inflammation of the sole of the foot,Foot,Unspecified,Inflammation,true
+football,Inguinal hernia,Groin,Unspecified,Unspecified,true
+football,Injury to abdominal muscles,Abdomen,Muscle,Unspecified,true
+football,Injury to the ankle,Ankle,Unspecified,Unspecified,true
+football,Inner ankle ligament tear,Ankle,Ligament,Tear,true
+football,Inner knee ligament tear,Knee,Ligament,Tear,true
+football,Inner ligament injury,Knee,Ligament,Unspecified,true
+football,Inner ligament stretch of the knee,Knee,Ligament,Strain,true
+football,Inner ligament tear,Knee,Ligament,Tear,true
+football,Inner ligament tear in ankle joint,Ankle,Ligament,Tear,true
+football,Insect bite,,,,false
+football,Internal ligament strain,Knee,Ligament,Strain,true
+football,Internal ligament tear,Knee,Ligament,Tear,true
+football,Intestinal surgery,,,,false
+football,Intestinal virus,,,,false
+football,Kidney problems,,,,false
+football,Kidney stone surgery,,,,false
+football,Kidney tumor,,,,false
+football,Knee bruise,Knee,Unspecified,Bruise,true
+football,Knee collateral ligament strain,Knee,Ligament,Strain,true
+football,Knee collateral ligament tear,Knee,Ligament,Tear,true
+football,Knee injury,Knee,Unspecified,Unspecified,true
+football,Knee medial ligament tear,Knee,Ligament,Tear,true
+football,Knee problems,Knee,Unspecified,Unspecified,true
+football,Knee surgery,Knee,Unspecified,Surgery,true
+football,Knock,Multiple,Unspecified,Bruise,true
+football,Left hip flexor problems,Hip,Muscle,Unspecified,true
+football,Leg injury,Lower Leg,Unspecified,Unspecified,true
+football,Ligament injury,Multiple,Ligament,Unspecified,true
+football,Ligament stretching,Multiple,Ligament,Strain,true
+football,Ligament tear,Multiple,Ligament,Tear,true
+football,Liver transplant,,,,false
+football,Liver tumor,,,,false
+football,Longitudinal tendon tear,Multiple,Tendon,Tear,true
+football,Lower leg fracture,Lower Leg,Bone,Fracture,true
+football,Lumbago,Back,Muscle,Unspecified,true
+football,Lumbar vertebra fracture,Back,Bone,Fracture,true
+football,Lumbar vertebra problems,Back,Bone,Unspecified,true
+football,Lung contusion,Chest,Organ,Bruise,false
+football,Lung tear,Chest,Organ,Tear,false
+football,Lymphatic cancer,,,,false
+football,Meniscus damage,Knee,Cartilage,Damage,true
+football,Meniscus injury,Knee,Cartilage,Unspecified,true
+football,Meniscus irritation,Knee,Cartilage,Irritation,true
+football,Meniscus tear,Knee,Cartilage,Tear,true
+football,Metacarpal fracture,Hand,Bone,Fracture,true
+football,Metatarsal bruise,Foot,Bone,Bruise,true
+football,Metatarsal fracture,Foot,Bone,Fracture,true
+football,Midfacial fracture,Head,Bone,Fracture,true
+football,Mononucleation,,,,false
+football,Muscle contusion,Multiple,Muscle,Bruise,true
+football,Muscle fatigue,Multiple,Muscle,Stiffness,true
+football,Muscle fiber tear,Multiple,Muscle,Partial Tear,true
+football,Muscle injury,Multiple,Muscle,Unspecified,true
+football,Muscle strain,Multiple,Muscle,Strain,true
+football,Muscle tear,Multiple,Muscle,Tear,true
+football,Neck bruise,Neck,Unspecified,Bruise,true
+football,Neck injury,Neck,Unspecified,Unspecified,true
+football,Nerval disease,,,,false
+football,Nose injury,Head,Bone,Unspecified,true
+football,Nose surgery,Head,Bone,Surgery,true
+football,Outer ligament problems,Ankle,Ligament,Unspecified,true
+football,Outer ligament tear,Ankle,Ligament,Tear,true
+football,Overstretching,Multiple,Ligament,Strain,true
+football,Overstretching of the syndesmotic ligament,Ankle,Ligament,Strain,true
+football,Partial damage to the cruciate ligament,Knee,Ligament,Partial Tear,true
+football,Partial muscle tear,Multiple,Muscle,Partial Tear,true
+football,Partial patellar tendon tear,Knee,Tendon,Partial Tear,true
+football,Partial tear of the plantar fascia,Foot,Tendon,Partial Tear,true
+football,Patellar tendinopathy syndrome,Knee,Tendon,Inflammation,true
+football,Patellar tendon dislocation,Knee,Tendon,Dislocation,true
+football,Patellar tendon irritation,Knee,Tendon,Irritation,true
+football,Patellar tendon problems,Knee,Tendon,Unspecified,true
+football,Patellar tendon rupture,Knee,Tendon,Rupture,true
+football,Patellar tendon tear,Knee,Tendon,Tear,true
+football,Pelvic contusion,Hip,Bone,Bruise,true
+football,Pelvic injury,Hip,Bone,Unspecified,true
+football,Pelvic obliquity,Hip,Bone,Unspecified,true
+football,Pelvic tumor,,,,false
+football,Peroneus tendon injury,Ankle,Tendon,Unspecified,true
+football,Pneumothorax,,,,false
+football,Pubalgia,Groin,Muscle,Unspecified,true
+football,Pubic bone bruise,Hip,Bone,Bruise,true
+football,Pubic bone irritation,Hip,Bone,Irritation,true
+football,Quarantine,,,,false
+football,Remove screws/nails,Multiple,Unspecified,Surgery,true
+football,Rest,,,,false
+football,Rib fracture,Chest,Bone,Fracture,true
+football,Right hip flexor problems,Hip,Muscle,Unspecified,true
+football,Ruptured eardrum,Head,Unspecified,Rupture,false
+football,Scaphoid fracture,Wrist,Bone,Fracture,true
+football,Scaphoid surgery,Wrist,Bone,Surgery,true
+football,Sciatica problems,Back,Nerve,Unspecified,true
+football,Shin bruise,Lower Leg,Bone,Bruise,true
+football,Shin injury,Lower Leg,Unspecified,Unspecified,true
+football,Shingles,,,,false
+football,Shoulder injury,Shoulder,Unspecified,Unspecified,true
+football,Shoulder joint contusion,Shoulder,Joint,Bruise,true
+football,Skin disease,,,,false
+football,Skull base fracture,Head,Bone,Fracture,true
+football,Skull fracture,Head,Bone,Fracture,true
+football,Sore muscles,Multiple,Muscle,Stiffness,true
+football,Splenic infarction,,,,false
+football,Splenic rupture,,,,false
+football,Strain in the thigh and gluteal muscles,Thigh,Muscle,Strain,true
+football,Stress reaction of the bone,Multiple,Bone,Unspecified,true
+football,Swine flu,,,,false
+football,Syndesmosis ligament tear,Ankle,Ligament,Tear,true
+football,Syndesmotic ligament tear,Ankle,Ligament,Tear,true
+football,Tear of the lateral meniscus,Knee,Cartilage,Tear,true
+football,Tendon irritation,Multiple,Tendon,Irritation,true
+football,Tendon rupture,Multiple,Tendon,Rupture,true
+football,Tendon tear,Multiple,Tendon,Tear,true
+football,Tendonitis,Multiple,Tendon,Inflammation,true
+football,Testicle rupture,,,,false
+football,Testicular cancer,,,,false
+football,Thigh problems,Thigh,Muscle,Unspecified,true
+football,Thumb injury,Hand,Unspecified,Unspecified,true
+football,Tibia and fibula fracture,Lower Leg,Bone,Fracture,true
+football,Tibial head contusion,Lower Leg,Bone,Bruise,true
+football,Toe injury,Foot,Unspecified,Unspecified,true
+football,Toe joint capsular tear,Foot,Joint,Tear,true
+football,Tonsillitis,,,,false
+football,Toothache,,,,false
+football,Tooth infection,,,,false
+football,Torn ankle ligaments,Ankle,Ligament,Tear,true
+football,Torn knee ligaments,Knee,Ligament,Tear,true
+football,Torn lateral ankle ligament,Ankle,Ligament,Tear,true
+football,Torn lateral knee ligament,Knee,Ligament,Tear,true
+football,Torn ligaments,Multiple,Ligament,Tear,true
+football,Torn ligaments in the tarsus,Foot,Ligament,Tear,true
+football,Torn muscle bundle,Multiple,Muscle,Tear,true
+football,Torn muscle fiber,Multiple,Muscle,Partial Tear,true
+football,Torn muscle fiber in the adductor area,Groin,Muscle,Partial Tear,true
+football,Torn thigh muscle,Thigh,Muscle,Tear,true
+football,Varicose vein,,,,false
+football,Vein occlusion,,,,false
+football,Vertebral injury,Back,Bone,Unspecified,true
+football,Virus,,,,false
+football,Whiplash,Neck,Unspecified,Unspecified,true
+football,Wrist fracture,Wrist,Bone,Fracture,true
+football,Wrist injury,Wrist,Unspecified,Unspecified,true
+football,abscess,,,,false
+football,allergic reaction,,,,false
+football,angina,,,,false
+football,bronchitis,,,,false
+football,bruise,Multiple,Unspecified,Bruise,true
+football,chickenpox,,,,false
+football,cold,,,,false
+football,collapsed lung,,,,false
+football,coma,,,,false
+football,combustion,,,,false
+football,concussion,Head,Concussion,Unspecified,true
+football,contortion,Multiple,Unspecified,Unspecified,true
+football,corn,Foot,Skin,Unspecified,false
+football,depression,,,,false
+football,double ligament tear,Multiple,Ligament,Tear,true
+football,fatigue fracture,Multiple,Bone,Fracture,true
+football,flesh wound,Multiple,Skin,Cut,true
+football,flu,,,,false
+football,fracture,Multiple,Bone,Fracture,true
+football,heart problems,,,,false
+football,infection,,,,false
+football,inflamed wound,Multiple,Skin,Inflammation,true
+football,inflammation,Multiple,Unspecified,Inflammation,true
+football,influenza,,,,false
+football,laceration,Multiple,Skin,Cut,true
+football,laceration wound,Multiple,Skin,Cut,true
+football,malaria,,,,false
+football,meningitis,,,,false
+football,minor knock,Multiple,Unspecified,Bruise,true
+football,muscle stiffness,Multiple,Muscle,Stiffness,true
+football,muscular problems,Multiple,Muscle,Unspecified,true
+football,open wound,Multiple,Skin,Cut,true
+football,pinched nerve,Multiple,Nerve,Unspecified,true
+football,pneumonia,,,,false
+football,sprain,Multiple,Ligament,Sprain,true
+football,stomach problems,,,,false
+football,strain,Multiple,Muscle,Strain,true
+football,stroke,,,,false
+football,surgery,Multiple,Unspecified,Surgery,true
+football,traffic accident,,,,false
+football,tuberculosis,,,,false
+football,unknown injury,Multiple,Unspecified,Unspecified,true
+football,Circulation problems,,,,false
+football,Abdominal muscle strain,Abdomen,Muscle,Strain,true
+football,Abdominal problems,Abdomen,Unspecified,Unspecified,true
+football,Broken nose bone,Head,Bone,Fracture,true
+football,Capsular injury,Multiple,Joint,Unspecified,true
+football,Fracture of frontal bone,Head,Bone,Fracture,true

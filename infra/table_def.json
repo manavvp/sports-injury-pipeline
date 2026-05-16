@@ -1,0 +1,288 @@
+{
+    "Name": "nfl_player_stats",
+    "DatabaseName": "sports_injury_raw",
+    "Owner": "owner",
+    "CreateTime": "2026-04-06T22:59:23+05:30",
+    "UpdateTime": "2026-04-06T22:59:24+05:30",
+    "LastAccessTime": "2026-04-06T22:59:24+05:30",
+    "Retention": 0,
+    "StorageDescriptor": {
+        "Columns": [
+            {
+                "Name": "player_id",
+                "Type": "string"
+            },
+            {
+                "Name": "player_name",
+                "Type": "string"
+            },
+            {
+                "Name": "player_display_name",
+                "Type": "string"
+            },
+            {
+                "Name": "position",
+                "Type": "string"
+            },
+            {
+                "Name": "position_group",
+                "Type": "string"
+            },
+            {
+                "Name": "headshot_url",
+                "Type": "string"
+            },
+            {
+                "Name": "recent_team",
+                "Type": "string"
+            },
+            {
+                "Name": "season",
+                "Type": "bigint"
+            },
+            {
+                "Name": "week",
+                "Type": "bigint"
+            },
+            {
+                "Name": "season_type",
+                "Type": "string"
+            },
+            {
+                "Name": "opponent_team",
+                "Type": "string"
+            },
+            {
+                "Name": "completions",
+                "Type": "bigint"
+            },
+            {
+                "Name": "attempts",
+                "Type": "bigint"
+            },
+            {
+                "Name": "passing_yards",
+                "Type": "bigint"
+            },
+            {
+                "Name": "passing_tds",
+                "Type": "bigint"
+            },
+            {
+                "Name": "interceptions",
+                "Type": "bigint"
+            },
+            {
+                "Name": "sacks",
+                "Type": "bigint"
+            },
+            {
+                "Name": "sack_yards",
+                "Type": "bigint"
+            },
+            {
+                "Name": "sack_fumbles",
+                "Type": "bigint"
+            },
+            {
+                "Name": "sack_fumbles_lost",
+                "Type": "bigint"
+            },
+            {
+                "Name": "passing_air_yards",
+                "Type": "bigint"
+            },
+            {
+                "Name": "passing_yards_after_catch",
+                "Type": "bigint"
+            },
+            {
+                "Name": "passing_first_downs",
+                "Type": "bigint"
+            },
+            {
+                "Name": "passing_epa",
+                "Type": "double"
+            },
+            {
+                "Name": "passing_2pt_conversions",
+                "Type": "bigint"
+            },
+            {
+                "Name": "pacr",
+                "Type": "double"
+            },
+            {
+                "Name": "dakota",
+                "Type": "string"
+            },
+            {
+                "Name": "carries",
+                "Type": "bigint"
+            },
+            {
+                "Name": "rushing_yards",
+                "Type": "bigint"
+            },
+            {
+                "Name": "rushing_tds",
+                "Type": "bigint"
+            },
+            {
+                "Name": "rushing_fumbles",
+                "Type": "bigint"
+            },
+            {
+                "Name": "rushing_fumbles_lost",
+                "Type": "bigint"
+            },
+            {
+                "Name": "rushing_first_downs",
+                "Type": "bigint"
+            },
+            {
+                "Name": "rushing_epa",
+                "Type": "double"
+            },
+            {
+                "Name": "rushing_2pt_conversions",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receptions",
+                "Type": "bigint"
+            },
+            {
+                "Name": "targets",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receiving_yards",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receiving_tds",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receiving_fumbles",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receiving_fumbles_lost",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receiving_air_yards",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receiving_yards_after_catch",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receiving_first_downs",
+                "Type": "bigint"
+            },
+            {
+                "Name": "receiving_epa",
+                "Type": "double"
+            },
+            {
+                "Name": "receiving_2pt_conversions",
+                "Type": "bigint"
+            },
+            {
+                "Name": "racr",
+                "Type": "double"
+            },
+            {
+                "Name": "target_share",
+                "Type": "double"
+            },
+            {
+                "Name": "air_yards_share",
+                "Type": "double"
+            },
+            {
+                "Name": "wopr",
+                "Type": "double"
+            },
+            {
+                "Name": "special_teams_tds",
+                "Type": "bigint"
+            },
+            {
+                "Name": "fantasy_points",
+                "Type": "double"
+            },
+            {
+                "Name": "fantasy_points_ppr",
+                "Type": "double"
+            }
+        ],
+        "Location": "s3://sports-injury-pipeline-manav/raw/nfl/player_stats/",
+        "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+        "OutputFormat": "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat",
+        "Compressed": false,
+        "NumberOfBuckets": -1,
+        "SerdeInfo": {
+            "SerializationLibrary": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+            "Parameters": {
+                "field.delim": ","
+            }
+        },
+        "BucketColumns": [],
+        "SortColumns": [],
+        "Parameters": {
+            "skip.header.line.count": "1",
+            "sizeKey": "3385499",
+            "objectCount": "2",
+            "UPDATED_BY_CRAWLER": "nfl-raw-crawler",
+            "recordCount": "7681",
+            "CrawlerSchemaSerializerVersion": "1.0",
+            "averageRecordSize": "440",
+            "partition_filtering.enabled": "true",
+            "compressionType": "none",
+            "CrawlerSchemaDeserializerVersion": "1.0",
+            "classification": "csv",
+            "columnsOrdered": "true",
+            "delimiter": ",",
+            "areColumnsQuoted": "false",
+            "CRAWL_RUN_ID": "33fdbc3a-6d05-4424-a837-d34435ab7c63",
+            "typeOfData": "file"
+        },
+        "StoredAsSubDirectories": false
+    },
+    "PartitionKeys": [
+        {
+            "Name": "season",
+            "Type": "string"
+        }
+    ],
+    "TableType": "EXTERNAL_TABLE",
+    "Parameters": {
+        "skip.header.line.count": "1",
+        "sizeKey": "3385499",
+        "objectCount": "2",
+        "UPDATED_BY_CRAWLER": "nfl-raw-crawler",
+        "recordCount": "7681",
+        "CrawlerSchemaSerializerVersion": "1.0",
+        "averageRecordSize": "440",
+        "partition_filtering.enabled": "true",
+        "compressionType": "none",
+        "CrawlerSchemaDeserializerVersion": "1.0",
+        "classification": "csv",
+        "columnsOrdered": "true",
+        "delimiter": ",",
+        "areColumnsQuoted": "false",
+        "CRAWL_RUN_ID": "33fdbc3a-6d05-4424-a837-d34435ab7c63",
+        "typeOfData": "file"
+    },
+    "CreatedBy": "arn:aws:sts::962520275184:assumed-role/GlueServiceRole/AWS-Crawler",
+    "IsRegisteredWithLakeFormation": false,
+    "CatalogId": "962520275184",
+    "VersionId": "1",
+    "IsMultiDialectView": false,
+    "IsMaterializedView": false
+}

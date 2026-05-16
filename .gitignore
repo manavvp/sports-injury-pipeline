@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# AWS credentials — never commit these
+*credentials*.csv
+*.pem
+.env
+
+# Raw source data — S3 is the source of truth (see README for download instructions)
+injuries_*.csv
+player_stats_*.csv
+roster_*.csv
+combine.csv
+
+# Stray Parquet output files
+*.parquet
+*.snappy.parquet
+
+# Claude Code local config
+.claude/
+Claude.md
+CLAUDE.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Screenshots and scratch
+Screenshots/

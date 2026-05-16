@@ -1,0 +1,220 @@
+{
+    "Name": "nfl_rosters",
+    "DatabaseName": "sports_injury_raw",
+    "Owner": "owner",
+    "CreateTime": "2026-04-06T22:59:25+05:30",
+    "UpdateTime": "2026-04-06T22:59:25+05:30",
+    "LastAccessTime": "2026-04-06T22:59:25+05:30",
+    "Retention": 0,
+    "StorageDescriptor": {
+        "Columns": [
+            {
+                "Name": "season",
+                "Type": "bigint"
+            },
+            {
+                "Name": "team",
+                "Type": "string"
+            },
+            {
+                "Name": "position",
+                "Type": "string"
+            },
+            {
+                "Name": "depth_chart_position",
+                "Type": "string"
+            },
+            {
+                "Name": "jersey_number",
+                "Type": "bigint"
+            },
+            {
+                "Name": "status",
+                "Type": "string"
+            },
+            {
+                "Name": "full_name",
+                "Type": "string"
+            },
+            {
+                "Name": "first_name",
+                "Type": "string"
+            },
+            {
+                "Name": "last_name",
+                "Type": "string"
+            },
+            {
+                "Name": "birth_date",
+                "Type": "string"
+            },
+            {
+                "Name": "height",
+                "Type": "bigint"
+            },
+            {
+                "Name": "weight",
+                "Type": "bigint"
+            },
+            {
+                "Name": "college",
+                "Type": "string"
+            },
+            {
+                "Name": "gsis_id",
+                "Type": "string"
+            },
+            {
+                "Name": "espn_id",
+                "Type": "bigint"
+            },
+            {
+                "Name": "sportradar_id",
+                "Type": "string"
+            },
+            {
+                "Name": "yahoo_id",
+                "Type": "bigint"
+            },
+            {
+                "Name": "rotowire_id",
+                "Type": "bigint"
+            },
+            {
+                "Name": "pff_id",
+                "Type": "bigint"
+            },
+            {
+                "Name": "pfr_id",
+                "Type": "string"
+            },
+            {
+                "Name": "fantasy_data_id",
+                "Type": "bigint"
+            },
+            {
+                "Name": "sleeper_id",
+                "Type": "bigint"
+            },
+            {
+                "Name": "years_exp",
+                "Type": "bigint"
+            },
+            {
+                "Name": "headshot_url",
+                "Type": "string"
+            },
+            {
+                "Name": "ngs_position",
+                "Type": "string"
+            },
+            {
+                "Name": "week",
+                "Type": "bigint"
+            },
+            {
+                "Name": "game_type",
+                "Type": "string"
+            },
+            {
+                "Name": "status_description_abbr",
+                "Type": "string"
+            },
+            {
+                "Name": "football_name",
+                "Type": "string"
+            },
+            {
+                "Name": "esb_id",
+                "Type": "string"
+            },
+            {
+                "Name": "gsis_it_id",
+                "Type": "bigint"
+            },
+            {
+                "Name": "smart_id",
+                "Type": "string"
+            },
+            {
+                "Name": "entry_year",
+                "Type": "bigint"
+            },
+            {
+                "Name": "rookie_year",
+                "Type": "bigint"
+            },
+            {
+                "Name": "draft_club",
+                "Type": "string"
+            },
+            {
+                "Name": "draft_number",
+                "Type": "bigint"
+            }
+        ],
+        "Location": "s3://sports-injury-pipeline-manav/raw/nfl/rosters/",
+        "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+        "OutputFormat": "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat",
+        "Compressed": false,
+        "NumberOfBuckets": -1,
+        "SerdeInfo": {
+            "SerializationLibrary": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+            "Parameters": {
+                "field.delim": ","
+            }
+        },
+        "BucketColumns": [],
+        "SortColumns": [],
+        "Parameters": {
+            "skip.header.line.count": "1",
+            "sizeKey": "1947469",
+            "objectCount": "2",
+            "UPDATED_BY_CRAWLER": "nfl-raw-crawler",
+            "recordCount": "6169",
+            "CrawlerSchemaSerializerVersion": "1.0",
+            "averageRecordSize": "315",
+            "partition_filtering.enabled": "true",
+            "compressionType": "none",
+            "CrawlerSchemaDeserializerVersion": "1.0",
+            "classification": "csv",
+            "columnsOrdered": "true",
+            "delimiter": ",",
+            "areColumnsQuoted": "false",
+            "CRAWL_RUN_ID": "33fdbc3a-6d05-4424-a837-d34435ab7c63",
+            "typeOfData": "file"
+        },
+        "StoredAsSubDirectories": false
+    },
+    "PartitionKeys": [
+        {
+            "Name": "season",
+            "Type": "string"
+        }
+    ],
+    "TableType": "EXTERNAL_TABLE",
+    "Parameters": {
+        "skip.header.line.count": "1",
+        "sizeKey": "1947469",
+        "objectCount": "2",
+        "UPDATED_BY_CRAWLER": "nfl-raw-crawler",
+        "recordCount": "6169",
+        "CrawlerSchemaSerializerVersion": "1.0",
+        "averageRecordSize": "315",
+        "partition_filtering.enabled": "true",
+        "compressionType": "none",
+        "CrawlerSchemaDeserializerVersion": "1.0",
+        "classification": "csv",
+        "columnsOrdered": "true",
+        "delimiter": ",",
+        "areColumnsQuoted": "false",
+        "CRAWL_RUN_ID": "33fdbc3a-6d05-4424-a837-d34435ab7c63",
+        "typeOfData": "file"
+    },
+    "CreatedBy": "arn:aws:sts::962520275184:assumed-role/GlueServiceRole/AWS-Crawler",
+    "IsRegisteredWithLakeFormation": false,
+    "CatalogId": "962520275184",
+    "VersionId": "1",
+    "IsMultiDialectView": false,
+    "IsMaterializedView": false
+}

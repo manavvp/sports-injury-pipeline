@@ -1,6 +1,6 @@
 # Sports Injury Pipeline ⚡
 
-An end-to-end data engineering pipeline on AWS to analyse if: **athletes return to pre-injury performance levels?**
+An end-to-end data engineering pipeline on AWS to analyse if **athletes return to pre-injury performance levels.**
 
 The pipeline ingests, models, and serves injury and performance data across two sports — NFL and association football (via Transfermarkt) — using a constellation schema that enables cross-sport analysis through conformed dimensions.
 

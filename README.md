@@ -1,4 +1,4 @@
-# Sports Injury Pipeline - NFL, Football (EU)
+# Sports Injury Pipeline - NFL, Football
 
 An end-to-end data engineering pipeline on AWS to analyse if **athletes return to pre-injury performance levels.**
 

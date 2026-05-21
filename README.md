@@ -95,7 +95,7 @@ dim_nfl_combine     ◄── (NFL only, FK to dim_player)   │
                                                        │
                     fact_nfl_performance_weekly    ─────┘
                     fact_nfl_performance_seasonal  ─────┘
-                    fact_football_performance      ─────┘
+                    fact_football_performance_seasonal ─────┘
                     fact_football_market_value     ─────┘
 ```
 
@@ -196,7 +196,7 @@ UNION ALL SELECT 'dim_nfl_combine',         COUNT(*) FROM sports_injury_processe
 UNION ALL SELECT 'fact_injury_event',       COUNT(*) FROM sports_injury_processed.fact_injury_event
 UNION ALL SELECT 'fact_nfl_performance_weekly',   COUNT(*) FROM sports_injury_processed.fact_nfl_performance_weekly
 UNION ALL SELECT 'fact_nfl_performance_seasonal', COUNT(*) FROM sports_injury_processed.fact_nfl_performance_seasonal
-UNION ALL SELECT 'fact_football_performance',     COUNT(*) FROM sports_injury_processed.fact_football_performance
+UNION ALL SELECT 'fact_football_performance_seasonal', COUNT(*) FROM sports_injury_processed.fact_football_performance_seasonal
 UNION ALL SELECT 'fact_football_market_value',    COUNT(*) FROM sports_injury_processed.fact_football_market_value;
 
 -- Partitions registered correctly

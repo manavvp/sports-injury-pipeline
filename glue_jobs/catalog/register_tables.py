@@ -148,7 +148,7 @@ TABLES: dict[str, dict] = {
         ),
     },
     # ===== JOB 3: FOOTBALL FACTS =====
-    "fact_football_performance": {
+    "fact_football_performance_seasonal": {
         "columns": (
             ("player_id", "int"),
             ("season_name", "string"),

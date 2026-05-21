@@ -5,7 +5,7 @@ Builds three football-specific fact tables:
   - fact_injury_event (Football side)
     Player injury records are collapsed into discrete events. Same injury
     across multiple consecutive reports → single event with start/end dates.
-  - fact_football_performance (granular match/season stats)
+  - fact_football_performance_seasonal (per-season stats by competition)
   - fact_football_market_value (market value time series)
 
 Pattern: GlueContext reads, PySpark transforms, Parquet writes.
@@ -165,7 +165,7 @@ def build_fact_injury_event_football(
     )
 
 
-def build_fact_football_performance(
+def build_fact_football_performance_seasonal(
     glue_context: GlueContext, spark: SparkSession
 ) -> DataFrame:
     """
@@ -259,9 +259,9 @@ def main() -> None:
         fact_injury_football = build_fact_injury_event_football(glue_context, spark)
         write_parquet(fact_injury_football, "fact_injury_event", partition_by="sport")
 
-        LOG.info("Building fact_football_performance")
-        fact_perf = build_fact_football_performance(glue_context, spark)
-        write_parquet(fact_perf, "fact_football_performance")
+        LOG.info("Building fact_football_performance_seasonal")
+        fact_perf = build_fact_football_performance_seasonal(glue_context, spark)
+        write_parquet(fact_perf, "fact_football_performance_seasonal")
 
         LOG.info("Building fact_football_market_value")
         fact_market = build_fact_football_market_value(glue_context, spark)

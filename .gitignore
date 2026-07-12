@@ -29,3 +29,11 @@ __pycache__/
 
 # Screenshots and scratch
 Screenshots/
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+crash.*.log

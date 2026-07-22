@@ -1,0 +1,140 @@
+name: CI
+
+on:
+  pull_request:
+    paths:
+      - 'terraform/**'
+      - '.github/workflows/ci.yml'
+
+# Cancel any in-flight run for the same PR when a new commit lands.
+concurrency:
+  group: terraform-ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+# id-token: write        → required to receive the OIDC token used to assume the AWS role.
+# contents: read         → checkout the PR code.
+# pull-requests: write   → post/update the plan comment.
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+
+env:
+  AWS_REGION: us-east-1
+  TF_WORKING_DIR: terraform
+
+jobs:
+  terraform:
+    name: Terraform (fmt / validate / plan)
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ${{ env.TF_WORKING_DIR }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::962520275184:role/GitHubActionsCI
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          # Pin to match local. Bumping is a deliberate PR, not a silent upgrade.
+          terraform_version: 1.15.8
+
+      - name: Terraform fmt
+        id: fmt
+        run: terraform fmt -check -recursive
+        continue-on-error: true
+
+      - name: Terraform init
+        id: init
+        run: terraform init -input=false
+
+      - name: Terraform validate
+        id: validate
+        run: terraform validate -no-color
+        continue-on-error: true
+
+      - name: Terraform plan
+        id: plan
+        run: terraform plan -no-color -input=false
+        continue-on-error: true
+
+      - name: Post plan as PR comment
+        uses: actions/github-script@v7
+        env:
+          PLAN_STDOUT: ${{ steps.plan.outputs.stdout }}
+          PLAN_STDERR: ${{ steps.plan.outputs.stderr }}
+          FMT_OUTCOME: ${{ steps.fmt.outcome }}
+          VALIDATE_OUTCOME: ${{ steps.validate.outcome }}
+          PLAN_OUTCOME: ${{ steps.plan.outcome }}
+        with:
+          script: |
+            const marker = '<!-- terraform-plan-comment -->';
+            const icon = (o) => (o === 'success' ? '✅' : '❌');
+
+            const rawPlan = (process.env.PLAN_STDOUT || '') + (process.env.PLAN_STDERR || '');
+            const MAX = 60000;
+            const truncated = rawPlan.length > MAX;
+            const planShown = truncated
+              ? rawPlan.substring(0, MAX) + '\n\n... [truncated — see workflow logs for full plan] ...'
+              : rawPlan;
+
+            const body = [
+              marker,
+              '### Terraform CI',
+              '',
+              '| Step | Result |',
+              '|------|--------|',
+              `| \`terraform fmt\` | ${icon(process.env.FMT_OUTCOME)} |`,
+              `| \`terraform validate\` | ${icon(process.env.VALIDATE_OUTCOME)} |`,
+              `| \`terraform plan\` | ${icon(process.env.PLAN_OUTCOME)} |`,
+              '',
+              '<details><summary>Show plan output</summary>',
+              '',
+              '```hcl',
+              planShown || '(no output)',
+              '```',
+              '',
+              '</details>',
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find((c) => c.body && c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Fail if any check failed
+        if: |
+          steps.fmt.outcome == 'failure' ||
+          steps.validate.outcome == 'failure' ||
+          steps.plan.outcome == 'failure'
+        run: |
+          echo "One or more Terraform checks failed. See PR comment and step logs above."
+          exit 1

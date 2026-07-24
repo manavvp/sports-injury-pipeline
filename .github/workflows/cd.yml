@@ -1,0 +1,107 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'terraform/**'
+      - 'glue_jobs/*.py'
+      - 'reference/**'
+      - '.github/workflows/cd.yml'
+
+# Do NOT cancel an in-flight apply — second merge waits for first to finish.
+concurrency:
+  group: terraform-cd
+  cancel-in-progress: false
+
+# id-token: write → OIDC token for assuming the CD role.
+# contents: read  → checkout main.
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  TF_WORKING_DIR: terraform
+  DATA_BUCKET: sports-injury-pipeline-manav
+
+jobs:
+  deploy:
+    name: Deploy (terraform apply + s3 sync)
+    runs-on: ubuntu-latest
+
+    # To require a human approval before apply, uncomment the block below and
+    # create a "production" environment in GitHub Settings → Environments with
+    # required reviewers. The job will pause on the environment gate.
+    #
+    environment:
+      name: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::962520275184:role/GitHubActionsCD
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.15.8
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Terraform init
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: terraform init -input=false
+
+      - name: Terraform apply
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: terraform apply -auto-approve -input=false -no-color
+
+      # Register/update processed-layer Glue tables.
+      # Idempotent: upserts via update-or-create semantics.
+      # Runs after apply so the Glue databases already exist.
+      - name: Register Glue table schemas
+        run: |
+          pip install boto3
+          python glue_jobs/catalog/register_tables.py
+
+      # Sync Python job scripts to S3. Excludes:
+      #   - deploy_*.sh: legacy manual-deploy scripts, obsolete under CD.
+      #   - catalog/*: table registration script, run from laptop, not by Glue.
+      # --delete keeps S3 in strict sync — deleting a script from the repo
+      # removes it from S3 on the next deploy.
+      - name: Sync Glue job scripts to S3
+        run: |
+          aws s3 sync ./glue_jobs/ s3://${{ env.DATA_BUCKET }}/scripts/ \
+            --exclude "*" \
+            --include "*.py" \
+            --exclude "catalog/*" \
+            --delete
+
+      # Sync reference lookup data (injury_type_lookup.csv, etc).
+      - name: Sync reference data to S3
+        run: |
+          aws s3 sync ./reference/ s3://${{ env.DATA_BUCKET }}/reference/ \
+            --delete
+
+      - name: Deployment summary
+        if: always()
+        run: |
+          {
+            echo "## Deployment"
+            echo ""
+            echo "- Commit: \`${{ github.sha }}\`"
+            echo "- Actor: @${{ github.actor }}"
+            echo "- Terraform: applied"
+            echo "- Glue tables: registered/updated via \`register_tables.py\`"
+            echo "- Glue scripts: synced to \`s3://${{ env.DATA_BUCKET }}/scripts/\`"
+            echo "- Reference data: synced to \`s3://${{ env.DATA_BUCKET }}/reference/\`"
+          } >> $GITHUB_STEP_SUMMARY

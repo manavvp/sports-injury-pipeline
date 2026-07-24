@@ -80,11 +80,17 @@ data "aws_iam_policy_document" "github_cd_assume" {
       values   = ["sts.amazonaws.com"]
     }
 
-    # Main branch pushes only — CD runs on merge to main
+    # Allow main-branch pushes AND the "production" environment context.
+    # When a job uses `environment:` the sub claim becomes
+    # `repo:<owner>/<repo>:environment:<name>` instead of the branch ref, so
+    # both values must be permitted for the two modes (env-gated / not) to work.
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:${local.github_repo}:ref:refs/heads/main"]
+      values = [
+        "repo:${local.github_repo}:ref:refs/heads/main",
+        "repo:${local.github_repo}:environment:production",
+      ]
     }
   }
 }

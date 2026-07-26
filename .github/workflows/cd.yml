@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'terraform/**'
-      - 'glue_jobs/*.py'
+      - 'glue_jobs/**/*.py'
       - 'reference/**'
       - '.github/workflows/cd.yml'
 
@@ -73,9 +73,10 @@ jobs:
           pip install boto3
           python glue_jobs/catalog/register_tables.py
 
-      # Sync Python job scripts to S3. Excludes:
+      # Sync top-level Glue job scripts to S3. Excludes:
       #   - deploy_*.sh: legacy manual-deploy scripts, obsolete under CD.
       #   - catalog/*: table registration script, run from laptop, not by Glue.
+      #   - transforms/*: pure-function package, deployed as a zip below.
       # --delete keeps S3 in strict sync — deleting a script from the repo
       # removes it from S3 on the next deploy.
       - name: Sync Glue job scripts to S3
@@ -84,7 +85,17 @@ jobs:
             --exclude "*" \
             --include "*.py" \
             --exclude "catalog/*" \
+            --exclude "transforms/*" \
             --delete
+
+      # Package the transforms/ package as a zip and upload. Glue loads this
+      # via `--extra-py-files` (set in glue.tf default_arguments) so the job
+      # scripts can `from transforms.dimensions import ...` at runtime.
+      - name: Package and upload transforms.zip
+        run: |
+          cd glue_jobs
+          zip -r /tmp/transforms.zip transforms/ -x '*__pycache__*'
+          aws s3 cp /tmp/transforms.zip s3://${{ env.DATA_BUCKET }}/scripts/transforms.zip
 
       # Sync reference lookup data (injury_type_lookup.csv, etc).
       - name: Sync reference data to S3
@@ -103,5 +114,6 @@ jobs:
             echo "- Terraform: applied"
             echo "- Glue tables: registered/updated via \`register_tables.py\`"
             echo "- Glue scripts: synced to \`s3://${{ env.DATA_BUCKET }}/scripts/\`"
+            echo "- Transforms package: uploaded as \`s3://${{ env.DATA_BUCKET }}/scripts/transforms.zip\`"
             echo "- Reference data: synced to \`s3://${{ env.DATA_BUCKET }}/reference/\`"
           } >> $GITHUB_STEP_SUMMARY

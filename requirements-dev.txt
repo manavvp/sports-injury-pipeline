@@ -1,0 +1,7 @@
+# PySpark pinned to match AWS Glue 4.0 runtime — tests exercise the same
+# engine version that runs in production.
+pyspark==3.3.0
+
+# Test + lint tooling
+pytest~=8.0
+ruff~=0.5

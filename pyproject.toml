@@ -1,0 +1,15 @@
+[tool.pytest.ini_options]
+# glue_jobs/ on the path so tests can `from transforms.dimensions import ...`
+# just like the Glue job scripts do at runtime (via --extra-py-files).
+pythonpath = ["glue_jobs"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["docs", "football-datasets"]
+
+[tool.ruff.lint]
+# Conservative rule set to start — pyflakes catches the important structural
+# issues (unused imports, undefined names) without style bikeshedding.
+select = ["F"]

@@ -35,6 +35,9 @@ resource "aws_glue_job" "jobs" {
     "--job-language"                     = "python"
     "--TempDir"                          = "s3://${aws_s3_bucket.sports_injury_pipeline_bucket.bucket}/glue-logs/"
     "--enable-continuous-cloudwatch-log" = "true"
+    # Makes the transforms/ package importable at runtime.
+    # CD packages glue_jobs/transforms/ into this zip on every deploy.
+    "--extra-py-files" = "s3://${aws_s3_bucket.sports_injury_pipeline_bucket.bucket}/scripts/transforms.zip"
   }
 
   execution_property {

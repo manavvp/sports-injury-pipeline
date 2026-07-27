@@ -37,3 +37,7 @@ Screenshots/
 *.tfvars
 crash.log
 crash.*.log
+
+# External / personal — never commit
+docs/
+football-datasets/
